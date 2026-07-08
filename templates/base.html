@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Manager</title>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>💰 Money</h2>
+
+    <a href="/" class="active">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-wallet" style="color:red;"></i>
+        Expenses
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-money-bill" style="color:blue;"></i>
+        Income
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-chart-line" style="color:green;"></i>
+        Reports
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-piggy-bank" style="color:gold;"></i>
+        Savings
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-gear" style="color:rgb(91, 88, 88);" ></i>
+        Settings
+    </a>
+
+</div>
+
+<div class="content">
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+
+</body>
+</html>
