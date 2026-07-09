@@ -109,3 +109,55 @@ body{
     background:#2563eb;
 
 }
+.expense-table{
+    width:100%;
+    margin-top:30px;
+    border-collapse:collapse;
+    background:#2b2d42;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.expense-table th{
+    background:#353857;
+    color:white;
+    padding:15px;
+}
+
+.expense-table td{
+    padding:15px;
+    border-bottom:1px solid #444;
+}
+
+.expense-table tr:hover{
+    background:#3b3e5c;
+}
+s
+.expense-table i{
+    margin-right:8px;
+}
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    text-align:center;
+    padding:18px;
+}
+
+td{
+    text-align:center;
+    padding:18px;
+}
+
+td:nth-child(3),
+th:nth-child(3){
+    text-align:center;
+}
+.category-cell{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Add Expense</h1>
+
+<form method="POST">
+
+    <label>Date</label><br>
+    <input type="date" name="date" required>
+
+    <br><br>
+
+    <label>Category</label><br>
+
+    <select name="category_id" required>
+
+        {% for category in categories %}
+            <option value="{{ category['id'] }}">
+                {{ category['name'] }}
+            </option>
+        {% endfor %}
+
+    </select>
+
+    <br><br>
+
+    <label>Description</label><br>
+    <input
+        type="text"
+        name="description"
+        placeholder="Example: Ramen at Ichiran"
+        required
+    >
+
+    <br><br>
+
+    <label>Amount (¥)</label><br>
+
+    <input
+        type="number"
+        name="amount"
+        min="1"
+        required
+    >
+
+    <br><br>
+
+    <label>Payment Method</label><br>
+
+    <select name="payment_method">
+
+        <option>Cash</option>
+        <option>Card</option>
+        <option>PayPay</option>
+        <option>Rakuten Pay</option>
+        <option>Bank Transfer</option>
+
+    </select>
+
+    <br><br>
+
+    <label>Note</label><br>
+
+    <textarea
+        name="note"
+        rows="4"
+        placeholder="Optional..."
+    ></textarea>
+
+    <br><br>
+
+    <button type="submit">
+        💾 Save Expense
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Expense History</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+
+    <tr>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Payment</th>
+        <th>Amount</th>
+    </tr>
+
+    {% for expense in expenses %}
+
+    <tr>
+
+        <td>{{ expense["date"] }}</td>
+
+        <td>{{ expense["category_name"] }}</td>
+
+        <td>{{ expense["description"] }}</td>
+
+        <td>{{ expense["payment_method"] }}</td>
+
+        <td>¥{{ expense["amount"] }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+
+{% endblock %}

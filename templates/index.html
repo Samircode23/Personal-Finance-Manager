@@ -10,19 +10,61 @@
 
     <div class="card">
         <h2>Income</h2>
-        <h3>¥140,000</h3>
+        <h3>¥{{ "{:,}".format(total_income) }}</h3>
     </div>
 
     <div class="card">
         <h2>Expenses</h2>
-        <h3>¥0</h3>
+        <h3>¥{{ "{:,}".format(total_expenses) }}</h3>
     </div>
 
     <div class="card">
         <h2>Savings</h2>
-        <h3>¥140,000</h3>
+       <h3>¥{{ "{:,}".format(savings) }}</h3>
     </div>
 
 </div>
+<hr>
+
+<h2>🕒 Recent Expenses</h2>
+
+<table class="expense-table">
+
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for expense in recent_expenses %}
+
+        <tr>
+
+            <td>{{ expense["date"] }}</td>
+
+            <td class="category-cell">
+               <i class="fa-solid {{ expense['category_icon'] }}"></i>
+               {{ expense["category_name"] }}
+            </td>
+
+            <td>{{ expense["description"] }}</td>
+
+            <td>¥{{ "{:,}".format(expense["amount"]) }}</td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+
 
 {% endblock %}
+
